@@ -1,0 +1,543 @@
+/*********************** GENERELT **************************/
+body {
+    margin: 0;
+    color: #241406;
+}
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+header {
+    font-family: din-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+
+p {
+    font-family: mr-eaves-modern, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/*
+.ret img {
+    transition: 0.2s;
+}
+
+.ret img:hover {
+    transform: scale(1.05);
+}
+*/
+
+.ret p,
+.ret h2 {
+    max-width: 270px;
+}
+
+/********** FOOTER *********/
+
+footer {
+    padding: 1.2rem;
+    background-color: #241406;
+    margin-top: 2rem;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+}
+
+footer h3 {
+    color: white;
+    font-size: 16px;
+}
+
+#footer_logo {
+    background-image: url("imgs/logo_rocca_hvid.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 130px;
+    height: 135px;
+}
+
+footer .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .column {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+footer .top,
+footer .buttom {
+    flex-grow: 1;
+    flex-basis: 200px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.container_footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.column_footer {
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* instagram */
+.fa-instagram {
+    background: white;
+    color: #241406;
+}
+
+.fa-twitter {
+    background: white;
+    color: #241406;
+}
+
+.fa-facebook {
+    background: white;
+    color: #241406;
+}
+
+.fa-instagram:hover {
+    background-image: linear-gradient(to bottom, #4c68d7, #8a3ab9, #e95950, #fbad50, #fccc63);
+    color: white;
+}
+
+.fa-twitter:hover {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-facebook:hover {
+    background: #3B5998;
+    color: white;
+}
+
+/********************** NORMAL MENU ***********************/
+
+/* unvisited link */
+/* visited link */
+/* selected link */
+header nav a:link,
+header nav a:visited,
+header nav a:active {
+    color: #241406;
+}
+
+/* mouse over link */
+header nav a:hover {
+    color: #F4A009;
+
+}
+
+/* omslutter hele menubaren */
+header {
+    position: fixed;
+    /* position: fixed gør så menuen sætter sig fast ligegylding hvor du er på siden */
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 1px 1px 5px #E3E3E3;
+    margin-top: 0;
+
+}
+
+/* det der omslutter teksten */
+header nav {
+    flex-direction: column;
+    margin: 1.3rem;
+    text-align: right;
+}
+
+/* selve teksten */
+header nav a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem;
+    padding-right: 1rem;
+}
+
+#go_to_menu a {
+    text-decoration: none;
+    color: #241406;
+    cursor: pointer;
+}
+
+#go_to_menu a:hover,
+#go_to_menu a:visited,
+#go_to_menu a:active {
+    text-decoration: none;
+    color: #241406;
+}
+
+/*********************** BURGER MENU ***********************/
+
+/* når burgermenuen er lukket */
+.hidden {
+    display: none;
+}
+
+#menu_knap {
+    display: inline-block;
+    padding-right: 0.2rem;
+    font-size: 1.2rem;
+}
+
+#menu_burger {
+    list-style-type: none;
+    /*  list-style-type: none gør at der ikke er punkter ud fra teksten */
+    margin-top: 1rem;
+}
+
+#menu_burger a {
+    padding-right: 0.5rem;
+}
+
+#menu_burger li {
+    margin: 1.6rem;
+}
+
+/* når burgermenuen skal udskiftes til normal menu får den klassen på */
+.hide_burgermenu {
+    display: none;
+}
+
+#menu_knap:hover {
+    color: #F4A009;
+    cursor: pointer;
+}
+
+/*Når skærmen er under og max 750px skal burgermenuen vises.*/
+@media only screen and (max-width:800px) {
+    .hide_burgermenu {
+        display: block;
+    }
+
+    .hide_menu {
+        display: none;
+    }
+}
+
+#larocca_logo {
+    background-image: url("imgs/logo_la.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 19px;
+    margin: 1.55rem 0 0 1.5rem;
+    position: absolute;
+}
+
+#larocca_logo:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media only screen and (min-width:801px) {
+    #larocca_logo {
+        margin: 1.3rem 0 0 1.5rem;
+
+    }
+}
+
+/***************** FORSIDE index.html ********************/
+
+#splash {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3.5rem;
+}
+
+#splash img {
+    max-width: 100%;
+    display: flex;
+}
+
+
+#splash .column {
+    flex-grow: 1;
+    flex-basis: 320px;
+    flex-direction: column;
+}
+
+#forside .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#forside .column {
+    flex-grow: 1;
+    flex-basis: 256px;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+}
+
+@media only screen and (max-width: 639px) {
+    #splash .hide {
+        display: none;
+    }
+}
+
+/******************* MENU & DRIKKEKORT ******************/
+
+#liste {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1vw;
+    max-width: 900px;
+    margin: auto;
+}
+
+.ret {
+    margin: 5px;
+    padding: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    #liste {
+        max-width: 300px;
+    }
+
+    #indhold img {
+        max-width: 270px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* For tablets*/
+    #liste {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ret {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 940px) {
+
+    /* For computers */
+    #liste {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.menu {
+    margin: 0 1rem 1rem 1rem;
+    padding-top: 4.8rem;
+    text-align: center;
+}
+
+.filter {
+    font-family: din-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 14px;
+    padding: 8px;
+    color: #241406;
+    border: none;
+}
+
+.valgt {
+    background-color: #241406;
+    color: white;
+    border-radius: 3px;
+
+}
+
+.ret img {
+    max-width: 270px;
+}
+
+/***** ny side + nysideDrikke ******/
+#tilbage {
+    margin: 5px;
+    margin-top: 5rem;
+    margin-left: 2rem;
+}
+
+#tilbage button {
+    padding: 0.8rem 0.8rem;
+    font-family: din-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 14px;
+    padding: 8px;
+    color: #241406;
+    border: none;
+    cursor: pointer;
+}
+
+#indhold {
+    min-height: auto;
+    margin-top: 10px;
+    padding: 0 2rem 0 2rem;
+    max-width: 300px;
+}
+
+#single {
+    top: 0;
+    background-color: white;
+    overflow: scroll;
+
+}
+
+
+/******************** VINKORT  *******************/
+
+#vinkort {
+    margin-top: 0;
+    padding-top: 5rem;
+    padding-bottom: 0.5rem;
+}
+
+#vinkort h2 {
+    text-align: center;
+}
+
+#vinkort h3,
+#vinkort p {
+    margin: 2rem;
+}
+
+@media only screen and (min-width: 675px) {
+    #vinkort {
+        text-align: center;
+    }
+}
+
+/******************* KONTAKT *******************/
+
+#kontakt {
+    padding-top: 5rem;
+}
+
+#kontakt h2 {
+    text-align: center;
+}
+
+#kontakt h4 {
+    margin-bottom: 0.2rem;
+}
+
+#kontakt .sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 2rem 2rem 2rem;
+}
+
+#kontakt .column {
+    flex-grow: 1;
+    flex-basis: 260px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#send {
+    text-align: right;
+}
+
+.box {
+    background-color: #241406;
+    height: 35px;
+}
+
+#box {
+    height: 110px;
+}
+
+#billede_rest img {
+    max-width: 100%;
+}
+
+
+
+@media only screen and (min-width: 580px) {
+    #kontakt .column {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 647px) {
+    #kontakt img {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 648px) {
+    #billede_rest {
+        padding: 1rem 1rem 6.5vh 0rem;
+    }
+}
+
+/***************** OM OS ***************/
+
+#om_os {
+    padding-top: 5rem;
+    max-width: 800px;
+}
+
+#om_os h2 {
+    text-align: center;
+}
+
+#om_os p {
+    margin: 2rem;
+}
+
+#om_os .container {
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#om_os .column {
+    flex-basis: 190px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+#om_os .container img {
+    max-width: 100%;
+}

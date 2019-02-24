@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valgt drink</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rhy2pac.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rhy2pac.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header id="menu">
+        <a id=larocca_logo href="index.html#splash"></a>
+        <nav class="hide_menu">
+            <a href="menu.html">MENU</a>
+            <a href="vinkort.html">VINKORT</a>
+            <a href="drikkekort.html">DRIKKEKORT</a>
+            <a href="omos.html">OM OS</a>
+            <a href="kontakt.html">KONTAKT</a>
+        </nav>
+
+        <!-- MENU BURGER MOBIL -->
+        <nav class="hide_burgermenu">
+            <div id="menu_knap">☰</div>
+            <ul id="menu_burger" class="hidden">
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="vinkort.html">VINKORT</a></li>
+                <li><a href="drikkekort.html">DRIKKEKORT</a></li>
+                <li><a href="omos.html">OM OS</a></li>
+                <li><a href="kontakt.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="single">
+        <div id="tilbage">
+            <button>Tilbage</button>
+        </div>
+        <section id="indhold"></section>
+    </main>
+
+    <script>
+        let retter = [];
+
+        let urlParams = new URLSearchParams(window.location.search)
+        let id = urlParams.get("id");
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+
+            async function hentJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1N8f1o7vtCmyqBdM1SbuxtIfnTMGKG3vXhOXKX9dLPmM");
+                retter = await jsonData.json();
+                visRetter();
+            }
+
+            function visRetter() {
+                let dest = document.querySelector("#indhold");
+                dest.innerHTML = "";
+                retter.forEach(ret => {
+                    if (id == ret.id) {
+                        let template =
+                            `<article class="ret">
+                                <img src="imgs/${ret.billede}.jpg" alt="${ret.navn}">
+                                <h2>${ret.navn}</h2>
+                                <p>${ret.kort}</p>
+                                <p>${ret.pris} kr.</p>
+                             </article>`;
+                        dest.insertAdjacentHTML("beforeend", template);
+                    }
+                });
+            } // function visRetter slut
+
+            document.querySelector("#tilbage").addEventListener("click", () => {
+                location.href = "drikkekort.html";
+            })
+
+            hentJson();
+
+        } // function start slut
+    </script>
+
+    <footer>
+        <div class="sectionwrapper">
+            <div class="column">
+                <div class="top">
+                    <h3>Åbningstider</h3>
+                    <p>Mandag - Torsdag 17.30 - 22.00</p>
+                    <p>Fredag - Søndag 17.00 - 24.00</p>
+                </div>
+
+                <div class="buttom">
+                    <h3>Kontakt os</h3>
+                    <p>Dronningens Tværgade 20 København K</p>
+                    <p>+45 21 34 90 99</p>
+                    <p>info@larocca.dk</p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="top">
+                    <div class="container_footer">
+                        <div id="footer_logo"></div>
+                    </div>
+                </div>
+                <div class="buttom">
+                    <div class="container_footer">
+                        <div class="column_footer">
+                            <a class="fa fa-facebook"></a>
+                        </div>
+                        <div class="column_footer">
+                            <a class="fa fa-instagram"></a>
+                        </div>
+                        <div class="column_footer">
+                            <a class="fa fa-twitter"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
